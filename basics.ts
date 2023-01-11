@@ -1,3 +1,4 @@
+//----enum-----
 const number1 = 12
 const number2 = 12
 const result = true
