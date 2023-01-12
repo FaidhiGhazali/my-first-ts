@@ -1,24 +1,20 @@
-function combine(input1, input2, resultConverstion) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConverstion === "as-number") {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+//----Function return type & void
+function add(num1, num2, num3) {
+    return num1 + num2 + num3;
 }
-var combinedAges = combine(39, 26, "as-number");
-console.log(combinedAges);
-var combinedStringAges = combine("39", "26", "as-number");
-console.log(combinedStringAges);
-var combinedNames = combine("Max", "Hanna", "as-string");
-console.log(combinedNames);
-function greet(user) {
-    console.log('Hi, I am ' + user.name);
+function printResult(num) {
+    console.log("The sum is " + num);
 }
-function isOlder(user, checkAge) {
-    console.log(checkAge > user.age);
+printResult(add(1, 2, 3));
+//-----Function as type
+var combinedValues;
+combinedValues = add;
+console.log(combinedValues(2, 2, 2));
+//-----Function as callback
+function addAndhandle(n1, n2, callback) {
+    var result = n1 + n2;
+    callback(result);
 }
-var result1 = greet({ name: "Max", age: 20 });
-var result2 = isOlder({ name: "Max", age: 20 }, 30);
+addAndhandle(10, 20, (function (result) {
+    console.log(result);
+}));
